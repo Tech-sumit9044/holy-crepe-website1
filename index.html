@@ -1,137 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Holy Crepe Catering</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<style>
-:root{
-  --accent:#f5c542;
-  --gray:#666;
-}
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#fff;
-  color:#222;
-}
-section{padding:100px 20px}
-.container{max-width:1200px;margin:auto}
-.center{text-align:center}
-.btn{
-  background:var(--accent);
-  color:#000;
-  padding:16px 44px;
-  border-radius:60px;
-  text-decoration:none;
-  font-weight:600;
-}
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-.card{
-  background:#fff;
-  padding:25px;
-  border-radius:14px;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-footer{
-  background:#111;
-  color:#fff;
-  padding:40px 20px;
-  text-align:center;
-}
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:#fff;
-  padding:16px;
-  border-radius:50%;
-  font-size:22px;
-  text-decoration:none;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holy Crepe Catering | Luxury Crepe Experience</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background-color: #fffaf5;
+    }
+    header {
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 60px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    header h1 {
+      color: #d47c3c;
+      font-size: 1.8em;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 15px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #d47c3c;
+    }
+    .hero {
+      height: 85vh;
+      background: url('Screenshot_20260113-211803.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero-content h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .hero-content p {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background-color: #d47c3c;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #b36227;
+    }
+    section {
+      padding: 80px 60px;
+      text-align: center;
+    }
+    .about {
+      background-color: #fff;
+    }
+    .about img {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .menu {
+      background-color: #fffaf5;
+    }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .menu-item {
+      background-color: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+    .menu-item:hover {
+      transform: scale(1.03);
+    }
+    .menu-item img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #d47c3c;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    @media(max-width: 768px){
+      header {
+        flex-direction: column;
+      }
+      .hero-content h2 {
+        font-size: 2.2em;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<!-- HERO -->
-<section class="center">
-  <div class="container">
+  <header>
     <h1>Holy Crepe Catering</h1>
-    <p>Ultra-luxury live crepe catering for unforgettable events</p>
-    <a href="#contact" class="btn">Book Now</a>
-  </div>
-</section>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<!-- CONTACT FORM -->
-<section id="contact">
-  <div class="container center">
-    <h2>Get a Quote</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required><br><br>
-      <input type="tel" placeholder="Phone Number" required><br><br>
-      <input type="date"><br><br>
-      <textarea placeholder="Tell us about your event"></textarea><br><br>
-      <button class="btn">Submit Enquiry</button>
-    </form>
-  </div>
-</section>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Luxury Crepe Catering for Every Occasion</h2>
+      <p>Elegant, delicious, and unforgettable — Holy Crepe brings the magic to you.</p>
+      <button class="btn">Book Your Event</button>
+    </div>
+  </section>
 
-<!-- MENU -->
-<section id="menu" style="background:#fafafa">
-  <div class="container">
-    <h2 class="center">Our Catering Menu</h2>
-    <p class="center" style="max-width:700px;margin:0 auto 50px">
-      Freshly made crepes, premium ingredients & live catering experience
-    </p>
+  <section class="about" id="about">
+    <h2>About Us</h2>
+    <p>At Holy Crepe Catering, we specialize in providing a gourmet crepe experience for weddings, corporate events, and private parties. Our professional chefs prepare fresh crepes right in front of your guests, creating a truly interactive and luxurious experience.</p>
+    <img src="Screenshot_20260113-211808.jpg" alt="About Holy Crepe Catering">
+  </section>
 
-    <div class="grid">
-      <div class="card">
+  <section class="menu" id="menu">
+    <h2>Our Signature Crepes</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="Screenshot_20260113-211814.jpg" alt="Sweet Crepe">
         <h3>Sweet Crepes</h3>
-        <ul>
-          <li>Nutella Banana</li>
-          <li>Strawberry & Cream</li>
-          <li>Chocolate Overload</li>
-          <li>Classic Sugar Butter</li>
-        </ul>
+        <p>Nutella, strawberries, whipped cream — crafted to perfection.</p>
       </div>
-
-      <div class="card">
-        <h3>Savoury Crepes</h3>
-        <ul>
-          <li>Cheese & Corn</li>
-          <li>Paneer Masala</li>
-          <li>Mushroom Delight</li>
-          <li>Italian Veg</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Add-Ons</h3>
-        <ul>
-          <li>Live Counter Setup</li>
-          <li>Custom Menu</li>
-          <li>Premium Toppings</li>
-          <li>Luxury Presentation</li>
-        </ul>
+      <div class="menu-item">
+        <img src="Screenshot_20260113-211819.jpg" alt="Savory Crepe">
+        <h3>Savory Crepes</h3>
+        <p>Fresh cheese, herbs, and premium fillings for a gourmet delight.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
-<footer>
-  <h4>Holy Crepe Catering</h4>
-  <p>Luxury live crepe catering for weddings, parties & corporate events</p>
-</footer>
-
-<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
-
+  <footer id="contact">
+    <p>📞 Contact us: <a href="mailto:info@holycrepecatering.com">info@holycrepecatering.com</a></p>
+    <p>© 2026 Holy Crepe Catering | Designed with ❤️ by Tech Sumit</p>
+  </footer>
 </body>
 </html>
