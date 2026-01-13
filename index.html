@@ -1,184 +1,137 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Holy Crepe Catering | Ultra‑Luxury Live Crepe Experience</title>
-  <meta name="description" content="Ultra‑luxury live crepe catering for weddings, corporate events and premium private celebrations." />  <!-- Google Fonts -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">  <!-- Icons -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />  <style>
-    :root{
-      --primary:#3b1f12;
-      --accent:#d4af37;
-      --light:#fbf9f5;
-      --dark:#0f0f0f;
-      --gray:#6b6b6b;
-    }
+<meta charset="UTF-8">
+<title>Holy Crepe Catering</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Poppins',sans-serif;color:#2b2b2b;line-height:1.8;background:#fff}
-    h1,h2,h3{font-family:'Playfair Display',serif}
+<style>
+:root{
+  --accent:#f5c542;
+  --gray:#666;
+}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#fff;
+  color:#222;
+}
+section{padding:100px 20px}
+.container{max-width:1200px;margin:auto}
+.center{text-align:center}
+.btn{
+  background:var(--accent);
+  color:#000;
+  padding:16px 44px;
+  border-radius:60px;
+  text-decoration:none;
+  font-weight:600;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+.card{
+  background:#fff;
+  padding:25px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+footer{
+  background:#111;
+  color:#fff;
+  padding:40px 20px;
+  text-align:center;
+}
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:#fff;
+  padding:16px;
+  border-radius:50%;
+  font-size:22px;
+  text-decoration:none;
+}
+</style>
+</head>
 
-    /* HERO */
-    header{
-      height:100vh;
-      background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),url('https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1600&q=80');
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:#fff;
-      padding:20px;
-    }
-    header h1{font-size:68px;margin-bottom:18px}
-    header p{font-size:22px;max-width:820px;margin:0 auto 40px;color:#eee}
+<body>
 
-    .btn{
-      display:inline-block;
-      background:var(--accent);
-      color:#000;
-      padding:16px 44px;
-      border-radius:60px;
-      text-decoration:none;
-      font-weight:600;
-      letter-spacing:1px;
-      transition:.4s;
-    }
-    .btn:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.45)}
-
-    section{padding:120px 20px}
-    .container{max-width:1350px;margin:auto}
-    .center{text-align:center}
-
-    .title h2{font-size:44px;margin-bottom:12px}
-    .title p{max-width:780px;margin:0 auto 80px;color:var(--gray)}
-
-    /* FEATURES */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px}
-    .feature{
-      background:#fff;
-      padding:50px 35px;
-      border-radius:26px;
-      box-shadow:0 30px 70px rgba(0,0,0,.09);
-      text-align:center;
-      transition:.4s;
-    }
-    .feature i{font-size:42px;color:var(--accent);margin-bottom:20px}
-    .feature:hover{transform:translateY(-12px)}
-
-    /* SPLIT */
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-    .split img{width:100%;border-radius:32px;box-shadow:0 30px 60px rgba(0,0,0,.2)}
-
-    /* TESTIMONIAL */
-    .testimonial{
-      background:#fff;
-      padding:45px 35px;
-      border-radius:26px;
-      box-shadow:0 25px 55px rgba(0,0,0,.08);
-    }
-
-    /* CONTACT */
-    form input,form textarea{
-      width:100%;
-      padding:18px;
-      border-radius:14px;
-      border:1px solid #ccc;
-      margin-bottom:20px;
-      font-size:15px;
-    }
-
-    footer{
-      background:var(--dark);
-      color:#aaa;
-      padding:70px 20px;
-    }
-    footer h4{color:#fff;margin-bottom:15px}
-
-    .whatsapp{
-      position:fixed;
-      bottom:25px;
-      right:25px;
-      background:#25d366;
-      color:#fff;
-      width:62px;height:62px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-size:30px;
-      box-shadow:0 12px 28px rgba(0,0,0,.45);
-      z-index:999;
-    }
-
-    @media(max-width:900px){
-      header h1{font-size:46px}
-      .split{grid-template-columns:1fr}
-    }
-  </style></head>
-<body><header>
-  <div>
-    <h1>Ultra‑Luxury Live Crepe Catering</h1>
-    <p>A five‑star live dessert experience crafted for weddings, corporate galas and elite private events.</p>
-    <a href="#contact" class="btn">Request a Private Quote</a>
+<!-- HERO -->
+<section class="center">
+  <div class="container">
+    <h1>Holy Crepe Catering</h1>
+    <p>Ultra-luxury live crepe catering for unforgettable events</p>
+    <a href="#contact" class="btn">Book Now</a>
   </div>
-</header><section>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact">
   <div class="container center">
-    <div class="title">
-      <h2>Why Premium Clients Choose Us</h2>
-      <p>Because luxury is not just taste — it’s presentation, service and experience.</p>
-    </div>
-    <div class="grid">
-      <div class="feature"><i class="fa-solid fa-fire"></i><h3>Live Crepe Theatre</h3><p>Fresh crepes prepared live, engaging guests visually and gastronomically.</p></div>
-      <div class="feature"><i class="fa-solid fa-gem"></i><h3>Imported Ingredients</h3><p>Only premium chocolate, fruits and gourmet fillings.</p></div>
-      <div class="feature"><i class="fa-solid fa-wand-magic-sparkles"></i><h3>Luxury Presentation</h3><p>Designer counters styled for high‑end events.</p></div>
-      <div class="feature"><i class="fa-solid fa-user-tie"></i><h3>White‑Glove Service</h3><p>Trained professionals delivering seamless hospitality.</p></div>
-    </div>
-  </div>
-</section><section style="background:var(--light)">
-  <div class="container split">
-    <div>
-      <h2>Events We Elevate</h2>
-      <p>Each event is curated with precision, elegance and flavour.</p>
-      <ul>
-        <li>Luxury Weddings & Receptions</li>
-        <li>Corporate Galas & Brand Launches</li>
-        <li>Private Celebrations & VIP Parties</li>
-        <li>High‑End Exhibitions & Pop‑Ups</li>
-      </ul>
-    </div>
-    <img src="https://images.unsplash.com/photo-1514511548104-417bcdb7e46d?auto=format&fit=crop&w=1200&q=80" alt="Luxury Dessert Catering">
-  </div>
-</section><section>
-  <div class="container center">
-    <div class="title">
-      <h2>Client Testimonials</h2>
-      <p>Trusted by wedding planners, brands and premium hosts.</p>
-    </div>
-    <div class="grid">
-      <div class="testimonial"><p>“An unforgettable experience. The crepe counter became the highlight of our wedding.”</p><strong>— Wedding Client</strong></div>
-      <div class="testimonial"><p>“Elegant setup, flawless service and exceptional taste. Truly premium.”</p><strong>— Corporate Event Head</strong></div>
-    </div>
-  </div>
-</section><section id="contact" style="background:#0f0f0f;color:#fff">
-  <div class="container center">
-    <div class="title">
-      <h2>Request a Bespoke Quote</h2>
-      <p>Share your event details and let us craft a luxury experience.</p>
-    </div>
+    <h2>Get a Quote</h2>
     <form>
-      <input type="text" placeholder="Full Name" required>
-      <input type="tel" placeholder="Phone Number" required>
-      <input type="date">
-      <textarea placeholder="Tell us about your event"></textarea>
+      <input type="text" placeholder="Full Name" required><br><br>
+      <input type="tel" placeholder="Phone Number" required><br><br>
+      <input type="date"><br><br>
+      <textarea placeholder="Tell us about your event"></textarea><br><br>
       <button class="btn">Submit Enquiry</button>
     </form>
   </div>
-</section><footer>
+</section>
+
+<!-- MENU -->
+<section id="menu" style="background:#fafafa">
   <div class="container">
-    <h4>Holy Crepe Catering</h4>
-    <p>Ultra‑luxury live crepe catering for unforgettable events.</p>
+    <h2 class="center">Our Catering Menu</h2>
+    <p class="center" style="max-width:700px;margin:0 auto 50px">
+      Freshly made crepes, premium ingredients & live catering experience
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Sweet Crepes</h3>
+        <ul>
+          <li>Nutella Banana</li>
+          <li>Strawberry & Cream</li>
+          <li>Chocolate Overload</li>
+          <li>Classic Sugar Butter</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Savoury Crepes</h3>
+        <ul>
+          <li>Cheese & Corn</li>
+          <li>Paneer Masala</li>
+          <li>Mushroom Delight</li>
+          <li>Italian Veg</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Add-Ons</h3>
+        <ul>
+          <li>Live Counter Setup</li>
+          <li>Custom Menu</li>
+          <li>Premium Toppings</li>
+          <li>Luxury Presentation</li>
+        </ul>
+      </div>
+    </div>
   </div>
-</footer><a href="https://wa.me/91XXXXXXXXXX" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h4>Holy Crepe Catering</h4>
+  <p>Luxury live crepe catering for weddings, parties & corporate events</p>
+</footer>
+
+<a href="https://wa.me/91XXXXXXXXXX" class="whatsapp">💬</a>
 
 </body>
 </html>
