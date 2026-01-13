@@ -1,187 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Holy Crepe Catering | Luxury Crepe Experience</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      color: #333;
-      background-color: #fffaf5;
-    }
-    header {
-      background-color: #fff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 60px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    header h1 {
-      color: #d47c3c;
-      font-size: 1.8em;
-    }
-    nav a {
-      text-decoration: none;
-      color: #333;
-      margin: 0 15px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: #d47c3c;
-    }
-    .hero {
-      height: 85vh;
-      background: url('Screenshot_20260113-211803.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      position: relative;
-    }
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0,0,0,0.4);
-    }
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-    .hero-content h2 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-    .hero-content p {
-      font-size: 1.3em;
-      margin-bottom: 20px;
-    }
-    .btn {
-      background-color: #d47c3c;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #b36227;
-    }
-    section {
-      padding: 80px 60px;
-      text-align: center;
-    }
-    .about {
-      background-color: #fff;
-    }
-    .about img {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    }
-    .menu {
-      background-color: #fffaf5;
-    }
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
-    }
-    .menu-item {
-      background-color: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    .menu-item:hover {
-      transform: scale(1.03);
-    }
-    .menu-item img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    footer {
-      background-color: #d47c3c;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-    footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    @media(max-width: 768px){
-      header {
-        flex-direction: column;
-      }
-      .hero-content h2 {
-        font-size: 2.2em;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional catering services for weddings, corporate events, and private parties in Los Angeles and surrounding areas. Get a quote today.">
+    <meta name="keywords" content="catering, wedding catering, corporate catering, private events, Los Angeles">
+    <title>Elite Catering Services - Professional Catering in Los Angeles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d4af37;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+        }
+        .mobile-menu.active {
+            display: block;
+        }
+        .mobile-menu ul {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: #d4af37;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin: 0 0.5rem;
+        }
+        .btn:hover {
+            background: #b8941f;
+        }
+        .about, .services, .menu, .gallery, .testimonials, .contact {
+            text-align: center;
+        }
+        .services .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .service {
+            padding: 2rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .menu .categories {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .menu .category {
+            background: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
+        }
+        .gallery .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .testimonials .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .testimonial {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+        .contact input, .contact textarea, .contact button {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact button {
+            background: #d4af37;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+        footer a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: #fff;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .btn {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Holy Crepe Catering</h1>
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#contact">Contact</a>
+        <div class="container">
+            <div class="logo">Elite Catering</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobile-menu">
+            <ul>
+                <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#services" onclick="toggleMenu()">Services</a></li>
+                <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
+                <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
+                <li><a href="#testimonials" onclick="toggleMenu()">Testimonials</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </ul>
+        </div>
     </nav>
-  </header>
 
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h2>Luxury Crepe Catering for Every Occasion</h2>
-      <p>Elegant, delicious, and unforgettable — Holy Crepe brings the magic to you.</p>
-      <button class="btn">Book Your Event</button>
-    </div>
-  </section>
+    <section id="hero" class="hero">
+        <h1>Exceptional Catering for Every Occasion</h1>
+        <p>Professional, reliable catering services in Los Angeles. From weddings to corporate events, we deliver quality and satisfaction.</p>
+        <a href="#contact" class="btn" role="button">Get a Quote</a>
+        <a href="tel:+15551234567" class="btn" role="button">Call Now</a>
+    </section>
 
-  <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>At Holy Crepe Catering, we specialize in providing a gourmet crepe experience for weddings, corporate events, and private parties. Our professional chefs prepare fresh crepes right in front of your guests, creating a truly interactive and luxurious experience.</p>
-    <img src="Screenshot_20260113-211808.jpg" alt="About Holy Crepe Catering">
-  </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>With over 15 years of experience in the catering industry, Elite Catering is committed to providing top-notch service for your events. We focus on fresh ingredients, professional staff, and customer satisfaction to make your occasion memorable.</p>
+    </section>
 
-  <section class="menu" id="menu">
-    <h2>Our Signature Crepes</h2>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <img src="Screenshot_20260113-211814.jpg" alt="Sweet Crepe">
-        <h3>Sweet Crepes</h3>
-        <p>Nutella, strawberries, whipped cream — crafted to perfection.</p>
-      </div>
-      <div class="menu-item">
-        <img src="Screenshot_20260113-211819.jpg" alt="Savory Crepe">
-        <h3>Savory Crepes</h3>
-        <p>Fresh cheese, herbs, and premium fillings for a gourmet delight.</p>
-      </div>
-    </div>
-  </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="grid">
+            <div class="service">
+                <h3>Wedding Catering</h3>
+                <p>Make your special day perfect with our customized wedding menus, tailored to your preferences and dietary needs.</p>
+            </div>
+            <div class="service">
+                <h3>Corporate Catering</h3>
+                <p>Impress clients and employees with professional catering for meetings, conferences, and office parties.</p>
+            </div>
+            <div class="service">
+                <h3>Private Events</h3>
+                <p>From birthdays to anniversaries, we handle all private gatherings with care and expertise.</p>
+            </div>
+        </div>
+    </section>
 
-  <footer id="contact">
-    <p>📞 Contact us: <a href="mailto:info@holycrepecatering.com">info@holycrepecatering.com</a></p>
-    <p>© 2026 Holy Crepe Catering | Designed with ❤️ by Tech Sumit</p>
-  </footer>
+    <section id="menu">
+        <h2>Sample Menu</h2>
+        <div class="categories">
+            <div class="category">
+                <h3>Appetizers</h3>
+                <ul>
+                    <li>Stuffed Mushrooms - $12</li>
+                    <li>Shrimp Cocktail - $18</li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>Main Courses</h3>
+                <ul>
+                    <li>Grilled Salmon - $28</li>
+                    <li>Beef Tenderloin - $35</li>
+                </ul>
+            </div>
+            <div class="category">
+                <h3>Desserts</h3>
+                <ul>
+                    <li>Chocolate Cake - $8</li>
+                    <li>Tiramisu - $10</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="grid">
+            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Catering setup">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Food platter">
+            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Event catering">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Delicious meal">
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="grid">
+            <div class="testimonial">
+                <p>"Elite Catering made our wedding reception amazing. The food was delicious, and the service was top-notch. Highly recommend!"</p>
+                <cite>- Sarah J., Los Angeles</cite>
+            </div>
+            <div class="testimonial">
+                <p>"For our company event, they handled everything perfectly. Professional team and great value for money."</p>
+                <cite>- Mike T., Beverly Hills</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Our family gathering was a success thanks to their catering. Fresh food and friendly staff."</p>
+                <cite>- Emily R., Pasadena</cite>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Your Phone">
+            <textarea placeholder="Event Details" rows="5" required></textarea>
+            <button type="submit" role="button">Get a Quote</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
+        <p>Email: <a href="mailto:info@elitecatering.com">info@elitecatering.com</a></p>
+        <p>Serving Los Angeles and surrounding areas</p>
+    </footer>
+
+    <a href="https://wa.me/15551234567" class="whatsapp-btn" aria-label="Contact via WhatsApp">💬</a>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
