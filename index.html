@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Holy Crepe Catering | Premium Catering Services</title>
 
-<meta name="description" content="Holy Crepe Catering provides premium crepe catering for weddings, corporate events, and private parties across the United States.">
-<meta name="keywords" content="Crepe Catering, Wedding Catering, Corporate Catering, Event Catering USA">
+<meta name="description" content="Premium crepe catering for weddings, corporate events, and private parties across the United States.">
+<meta name="keywords" content="Crepe Catering USA, Wedding Catering, Corporate Catering">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -17,26 +18,53 @@ a{text-decoration:none;color:inherit}
 .container{max-width:1200px;margin:auto;padding:0 20px}
 
 /* HEADER */
-header{background:#000;color:#fff;position:fixed;width:100%;z-index:1000}
+header{background:#000;color:#fff;position:fixed;width:100%;top:0;z-index:1000}
 nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
 .logo{font-size:22px;font-weight:600;color:#f5c16c}
 .menu{display:flex;gap:25px}
-.menu a{color:#fff;font-weight:400}
+.menu a{color:#fff}
 .menu-toggle{display:none;flex-direction:column;cursor:pointer}
 .menu-toggle span{background:#fff;height:3px;width:25px;margin:4px 0}
 
 /* HERO */
-.hero{height:100vh;background:url("https://images.unsplash.com/photo-1555243896-c709bfa0b564") center/cover no-repeat;
-display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;position:relative}
-.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.6)}
-.hero-content{position:relative;max-width:700px}
+.hero{
+  height:100vh;
+  background:url("https://images.unsplash.com/photo-1555243896-c709bfa0b564") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  pointer-events:none; /* 🔥 FIX */
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:750px;
+}
 .hero h1{font-size:42px;color:#f5c16c}
 .hero p{margin:20px 0;font-size:18px}
-.btn{display:inline-block;background:#f5c16c;color:#000;padding:14px 30px;font-weight:600;border-radius:5px}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  background:#f5c16c;
+  color:#000;
+  padding:14px 30px;
+  font-weight:600;
+  border-radius:5px;
+}
 .btn:hover{background:#fff}
 
 /* SECTIONS */
-section{padding:90px 0}
+section{padding:100px 0}
 h2{text-align:center;margin-bottom:40px;font-size:32px}
 
 /* SERVICES */
@@ -51,19 +79,33 @@ h2{text-align:center;margin-bottom:40px;font-size:32px}
 
 /* CONTACT */
 .contact-box{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-input,textarea{width:100%;padding:12px;margin-bottom:15px;border:1px solid #ccc;border-radius:5px}
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
 
 /* FOOTER */
 footer{background:#000;color:#fff;text-align:center;padding:30px}
-footer p{margin:5px 0}
 
 /* RESPONSIVE */
 @media(max-width:768px){
-.menu{display:none;flex-direction:column;background:#000;position:absolute;top:60px;left:0;width:100%;padding:20px}
-.menu.active{display:flex}
-.menu-toggle{display:flex}
-.contact-box{grid-template-columns:1fr}
-.hero h1{font-size:32px}
+  .menu{
+    display:none;
+    flex-direction:column;
+    background:#000;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    padding:20px
+  }
+  .menu.active{display:flex}
+  .menu-toggle{display:flex}
+  .contact-box{grid-template-columns:1fr}
+  .hero h1{font-size:32px}
 }
 </style>
 </head>
@@ -71,93 +113,89 @@ footer p{margin:5px 0}
 <body>
 
 <header>
-<div class="container">
-<nav>
-<div class="logo">Holy Crepe Catering</div>
-<div class="menu-toggle" onclick="toggleMenu()">
-<span></span><span></span><span></span>
-</div>
-<div class="menu" id="menu">
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-</div>
+  <div class="container">
+    <nav>
+      <div class="logo">Holy Crepe Catering</div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="menu" id="menu">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
 </header>
 
 <section class="hero" id="home">
-<div class="hero-content">
-<h1>Premium Crepe Catering for Every Occasion</h1>
-<p>Serving weddings, corporate events, and private parties with elegance and flavor across the United States.</p>
-<a href="#contact" class="btn">Get a Free Quote</a>
-</div>
+  <div class="hero-content">
+    <h1>Premium Crepe Catering for Every Occasion</h1>
+    <p>Weddings, corporate events, and private parties across the United States.</p>
+    <a href="#contact" class="btn">Get a Free Quote</a>
+  </div>
 </section>
 
 <section id="services">
-<div class="container">
-<h2>Our Catering Services</h2>
-<div class="services">
-<div class="card"><h3>Wedding Catering</h3><p>Elegant crepe stations designed to impress your guests.</p></div>
-<div class="card"><h3>Corporate Events</h3><p>Professional catering for meetings, launches, and conferences.</p></div>
-<div class="card"><h3>Private Parties</h3><p>Birthdays, anniversaries, and special celebrations.</p></div>
-<div class="card"><h3>Festivals & Outdoor Events</h3><p>High-volume catering with consistent quality.</p></div>
-</div>
-</div>
+  <div class="container">
+    <h2>Our Catering Services</h2>
+    <div class="services">
+      <div class="card"><h3>Wedding Catering</h3><p>Elegant crepe stations for unforgettable weddings.</p></div>
+      <div class="card"><h3>Corporate Events</h3><p>Professional catering for meetings and conferences.</p></div>
+      <div class="card"><h3>Private Parties</h3><p>Perfect for birthdays and celebrations.</p></div>
+      <div class="card"><h3>Festivals</h3><p>High-volume catering with consistent quality.</p></div>
+    </div>
+  </div>
 </section>
 
 <section class="testimonials">
-<div class="container">
-<h2>What Our Clients Say</h2>
-<div class="testimonial-box">
-<div class="testimonial"><p>"Outstanding service and incredible crepes. Our wedding guests loved it!"</p><strong>— Emily R.</strong></div>
-<div class="testimonial"><p>"Professional setup and amazing taste. Perfect for our corporate event."</p><strong>— Mark T.</strong></div>
-<div class="testimonial"><p>"Reliable, friendly, and delicious. Highly recommended."</p><strong>— Jessica L.</strong></div>
-</div>
-</div>
+  <div class="container">
+    <h2>What Clients Say</h2>
+    <div class="testimonial-box">
+      <div class="testimonial">“Amazing service and delicious crepes!” — Emily R.</div>
+      <div class="testimonial">“Professional and reliable catering.” — Mark T.</div>
+      <div class="testimonial">“Highly recommended for events.” — Jessica L.</div>
+    </div>
+  </div>
 </section>
 
 <section id="about">
-<div class="container">
-<h2>About Holy Crepe Catering</h2>
-<p style="text-align:center;max-width:800px;margin:auto">
-Holy Crepe Catering is dedicated to delivering high-quality crepe catering with exceptional presentation and service.
-We use fresh ingredients and provide a seamless experience for events of all sizes across the United States.
-</p>
-</div>
+  <div class="container">
+    <h2>About Us</h2>
+    <p style="max-width:800px;margin:auto;text-align:center">
+      Holy Crepe Catering delivers premium crepe catering experiences using fresh ingredients and professional service across the United States.
+    </p>
+  </div>
 </section>
 
 <section id="contact">
-<div class="container">
-<h2>Contact Us</h2>
-<div class="contact-box">
-<div>
-<p><strong>Phone:</strong> <a href="tel:+17067657087">+1 706-765-7087</a></p>
-<p><strong>Email:</strong> info@holycrepecatering.com</p>
-<iframe src="https://maps.google.com/maps?q=United%20States&t=&z=4&ie=UTF8&iwloc=&output=embed"
-width="100%" height="250" style="border:0"></iframe>
-</div>
-
-<form>
-<input type="text" placeholder="Your Name" required>
-<input type="email" placeholder="Your Email" required>
-<input type="tel" placeholder="Phone Number">
-<textarea placeholder="Tell us about your event"></textarea>
-<button class="btn" type="submit">Send Inquiry</button>
-</form>
-</div>
-</div>
+  <div class="container">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+      <div>
+        <p><strong>Phone:</strong> <a href="tel:+17067657087">+1 706-765-7087</a></p>
+        <iframe src="https://maps.google.com/maps?q=United%20States&t=&z=4&output=embed"
+          width="100%" height="250" style="border:0"></iframe>
+      </div>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <input type="tel" placeholder="Phone Number">
+        <textarea placeholder="Tell us about your event"></textarea>
+        <button class="btn" type="submit">Send Inquiry</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <footer>
-<p>© 2026 Holy Crepe Catering</p>
-<p>Premium Catering Services | United States</p>
+  <p>© 2026 Holy Crepe Catering | United States</p>
 </footer>
 
 <script>
 function toggleMenu(){
-document.getElementById("menu").classList.toggle("active");
+  document.getElementById("menu").classList.toggle("active");
 }
 </script>
 
