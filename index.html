@@ -1,507 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Holy Crepe Catering offers premium catering services for weddings, corporate events, and private gatherings in Georgia and surrounding areas. Experience exceptional quality and service.">
-    <meta name="keywords" content="catering, wedding catering, corporate catering, private events, Georgia catering, Holy Crepe Catering">
-    <meta name="author" content="Holy Crepe Catering">
-    <title>Holy Crepe Catering - Premium Catering Services in Georgia</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-            scroll-behavior: smooth;
-        }
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: #000;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-        button {
-            cursor: pointer;
-            font-family: inherit;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #000;
-            color: #fff;
-            z-index: 1000;
-            padding: 10px 0;
-        }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #ffd700;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-        nav ul li a {
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #ffd700;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        .mobile-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            flex-direction: column;
-            padding: 20px;
-        }
-        .mobile-menu.active {
-            display: flex;
-        }
-        .mobile-menu li {
-            margin: 10px 0;
-        }
-        /* Hero */
-        #hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80') center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-        }
-        #hero h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-        }
-        #hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn {
-            padding: 15px 30px;
-            background-color: #ffd700;
-            color: #000;
-            font-weight: 600;
-            border: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #e6c200;
-        }
-        .btn.secondary {
-            background-color: transparent;
-            border: 2px solid #ffd700;
-            color: #ffd700;
-        }
-        .btn.secondary:hover {
-            background-color: #ffd700;
-            color: #000;
-        }
-        /* Sections */
-        section {
-            padding: 80px 0;
-        }
-        section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: #000;
-        }
-        section h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        /* About */
-        #about {
-            background-color: #f9f9f9;
-        }
-        #about .container {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-        #about img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 10px;
-        }
-        /* Services */
-        #services {
-            background-color: #fff;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        .service-item {
-            text-align: center;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            transition: box-shadow 0.3s;
-        }
-        .service-item:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        /* Menu */
-        #menu {
-            background-color: #f9f9f9;
-        }
-        .menu-category {
-            margin-bottom: 40px;
-        }
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
-        }
-        .menu-item:last-child {
-            border-bottom: none;
-        }
-        /* Gallery */
-        #gallery {
-            background-color: #fff;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .gallery-grid img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s;
-        }
-        .gallery-grid img:hover {
-            transform: scale(1.05);
-        }
-        /* Testimonials */
-        #testimonials {
-            background-color: #f9f9f9;
-        }
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        .testimonial {
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 10px;
-        }
-        .testimonial cite {
-            font-weight: 600;
-        }
-        /* Contact */
-        #contact {
-            background-color: #fff;
-        }
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 500;
-        }
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: inherit;
-        }
-        textarea {
-            height: 100px;
-        }
-        /* Footer */
-        footer {
-            background-color: #000;
-            color: #fff;
-            padding: 40px 0;
-            text-align: center;
-        }
-        footer .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        footer a {
-            color: #ffd700;
-        }
-        /* Fixed Button */
-        .fixed-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffd700;
-            color: #000;
-            padding: 15px;
-            border-radius: 50%;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transition: background-color 0.3s;
-        }
-        .fixed-btn:hover {
-            background-color: #e6c200;
-        }
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
-            #hero h1 {
-                font-size: 2rem;
-            }
-            #hero p {
-                font-size: 1rem;
-            }
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            #about .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            footer .container {
-                flex-direction: column;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Holy Crepe Catering | Premium Catering Services</title>
+
+  <meta name="description" content="Holy Crepe Catering offers premium wedding, corporate, and private event catering services. Call +1 706-765-7087 for a custom quote.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      color: #111;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 25px;
+      z-index: 1000;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .menu {
+      display: flex;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+      }
+
+      .menu a {
+        padding: 15px;
+        border-top: 1px solid #333;
+      }
+
+      .hamburger {
+        display: block;
+      }
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero {
+      background: url("https://images.unsplash.com/photo-1604908177522-402d0b9aa7b6") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 160px 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    .btn {
+      background: gold;
+      color: #000;
+      padding: 12px 25px;
+      margin: 10px;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #f8f8f8;
+      padding: 25px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+    }
+
+    .call-fixed {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: gold;
+      padding: 15px 18px;
+      border-radius: 50%;
+      font-weight: bold;
+      color: black;
+      text-decoration: none;
+      z-index: 1000;
+    }
+  </style>
 </head>
+
 <body>
-    <nav>
-        <div class="container">
-            <div class="logo">Holy Crepe Catering</div>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-        <ul class="mobile-menu">
-            <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
-            <li><a href="#about" onclick="toggleMenu()">About</a></li>
-            <li><a href="#services" onclick="toggleMenu()">Services</a></li>
-            <li><a href="#menu" onclick="toggleMenu()">Menu</a></li>
-            <li><a href="#gallery" onclick="toggleMenu()">Gallery</a></li>
-            <li><a href="#testimonials" onclick="toggleMenu()">Testimonials</a></li>
-            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </ul>
-    </nav>
 
-    <section id="hero">
-        <div class="container">
-            <h1>Elevate Your Events with Holy Crepe Catering</h1>
-            <p>Premium catering services for weddings, corporate events, and private gatherings in Georgia.</p>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn">Get a Quote</a>
-                <a href="tel:+17067657087" class="btn secondary">Call Now</a>
-            </div>
-        </div>
-    </section>
+<header>
+  <div class="logo">Holy Crepe Catering</div>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav class="menu" id="menu">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+17067657087">Call Now</a>
+  </nav>
+</header>
 
-    <section id="about">
-        <div class="container">
-            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Catering team preparing food">
-            <div>
-                <h2>About Us</h2>
-                <p>At Holy Crepe Catering, we have over 15 years of experience providing exceptional catering services to clients across Georgia. Our commitment to quality ingredients, meticulous preparation, and outstanding customer service ensures that every event is memorable. We specialize in creating customized menus that cater to your unique tastes and dietary needs, delivering reliability and excellence you can trust.</p>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <h1>Premium Catering for Every Occasion</h1>
+  <p>Weddings · Corporate Events · Private Celebrations</p>
+  <a href="#contact" class="btn">Get a Quote</a>
+  <a href="tel:+17067657087" class="btn">Call Now</a>
+</section>
 
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <h3>Wedding Catering</h3>
-                    <p>Make your special day unforgettable with our elegant wedding catering options. From intimate ceremonies to grand receptions, we handle every detail with care and precision.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Corporate Catering</h3>
-                    <p>Impress clients and colleagues with professional catering for meetings, conferences, and office events. Our diverse menus keep everyone satisfied and productive.</p>
-                </div>
-                <div class="service-item">
-                    <h3>Private Events</h3>
-                    <p>Whether it's a birthday, anniversary, or family gathering, our private event catering brings flavor and sophistication to your celebration.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="about">
+  <h2>About Us</h2>
+  <p style="text-align:center;max-width:800px;margin:auto;">
+    Holy Crepe Catering provides professional catering services across the United States,
+    delivering high-quality food, reliable service, and memorable experiences for every event.
+  </p>
+</section>
 
-    <section id="menu">
-        <div class="container">
-            <h2>Sample Menu</h2>
-            <div class="menu-category">
-                <h3>Appetizers</h3>
-                <div class="menu-item">
-                    <span>Stuffed Mushrooms</span>
-                    <span>$12</span>
-                </div>
-                <div class="menu-item">
-                    <span>Shrimp Cocktail</span>
-                    <span>$18</span>
-                </div>
-            </div>
-            <div class="menu-category">
-                <h3>Main Courses</h3>
-                <div class="menu-item">
-                    <span>Grilled Salmon</span>
-                    <span>$28</span>
-                </div>
-                <div class="menu-item">
-                    <span>Beef Tenderloin</span>
-                    <span>$35</span>
-                </div>
-            </div>
-            <div class="menu-category">
-                <h3>Desserts</h3>
-                <div class="menu-item">
-                    <span>Chocolate Crepe</span>
-                    <span>$8</span>
-                </div>
-                <div class="menu-item">
-                    <span>Fruit Tart</span>
-                    <span>$10</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card">Wedding Catering</div>
+    <div class="card">Corporate Catering</div>
+    <div class="card">Private Events</div>
+  </div>
+</section>
 
-    <section id="gallery">
-        <div class="container">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Catering setup">
-                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Wedding catering">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Desserts">
-                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Gourmet food">
-                <img src="https://images.unsplash.com/photo-1556909114-2a411a8c7e02?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Crepes">
-                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Event catering">
-            </div>
-        </div>
-    </section>
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="grid gallery">
+    <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2" />
+    <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1" />
+    <img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9" />
+  </div>
+</section>
 
-    <section id="testimonials">
-        <div class="container">
-            <h2>Testimonials</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <p>"Holy Crepe Catering made our wedding reception absolutely perfect. The food was delicious, and the service was top-notch. Highly recommend!"</p>
-                    <cite>- Sarah Johnson, Atlanta</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"For our corporate event, they delivered on time with a variety of options that pleased everyone. Professional and reliable."</p>
-                    <cite>- Mike Thompson, Savannah</cite>
-                </div>
-                <div class="testimonial">
-                    <p>"Our family gathering was a hit thanks to their private event catering. Fresh ingredients and great presentation."</p>
-                    <cite>- Emily Davis, Augusta</cite>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="contact">
+  <h2>Contact & Booking</h2>
+  <p style="text-align:center;">
+    Call us directly at <strong><a href="tel:+17067657087">+1 706-765-7087</a></strong><br>
+    Serving Georgia and surrounding areas
+  </p>
+</section>
 
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <form class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="event-type">Event Type</label>
-                    <select id="event-type" name="event-type" required>
-                        <option value="">Select Event Type</option>
-                        <option value="wedding">Wedding</option>
-                        <option value="corporate">Corporate</option>
-                        <option value="private">Private Event</option>
-                    </select>
+<footer>
+  <p>📞 <a href="tel:+17067657087">+1 706-765-7087</a></p>
+  <p>© 2026 Holy Crepe Catering. All Rights Reserved.</p>
+</footer>
+
+<a class="call-fixed" href="tel:+17067657087">📞</a>
+
+<script>
+  function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+</script>
+
+</body>
+</html>
